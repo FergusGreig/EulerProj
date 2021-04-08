@@ -12,7 +12,7 @@ while (year <2001):
         firstdays = [1,32,60,91,121,152,182,213,244,274,305,335]
     if (x==7):
         x=0  
-        if jday in firstdays and year>1900:
+        if jday in firstdays and year:
             sumsun+=1
     if jday == eoy:
         jday = 0
