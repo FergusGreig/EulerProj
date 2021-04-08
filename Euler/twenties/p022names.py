@@ -7,8 +7,21 @@ def importnames(file):
         for row in reader:
             for name in row:
                 names.append(name)
-    return(names)     
+    names.sort()
+    return(names)
+
+def scorenames(namelist):
+    scoresum=0
+    n=0
+    for name in namelist:
+        score=0
+        n+=1
+        for letter in name:
+            score+= ord(letter)-64
+        scoresum+= score*n
+    return(scoresum)
+
 
 if __name__ == "__main__":
     names = importnames('p022_names.txt')
-    print(names)
+    print(scorenames(names))
